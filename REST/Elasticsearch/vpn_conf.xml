@@ -1,0 +1,112 @@
+<ObjectDefinition>
+  <information>
+    <icon>none</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <serviceTaskType/>
+    <order>0</order>
+    <visibility>0</visibility>
+    <configType>xml</configType>
+    <createTemplateId/>
+    <createTemplateObject/>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects/>
+    <name>vpn.conf</name>
+    <group>VPN|REST</group>
+    <importonce>false</importonce>
+    <importrank>0</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>false</sortascending>
+    <sortauto>false</sortauto>
+    <sortnumerical>false</sortnumerical>
+    <sortvariable>param._order</sortvariable>
+  </information>
+  <variables frozen="0">
+    <variable displayName="VPN File" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Router" name="params.router" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="1" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="VLAN ID" name="params.vlan_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="2" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="VPN ID" name="params.vpn_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="3" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Bandwidth" name="params.bandwidth" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="5" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="sla" name="params.sla" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="NE-OPS" name="params.ne_ops" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="6" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="_order" name="params._order" startIncrement="0" type="String" mandatoryArray="false" visible="false" description="" groupSeparator="" groupDisplayName="" displayOrder="7" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example/>
+  <command name="IMPORT">
+    <operation>GET</operation>
+    <post_template>{assign_object_variable var=&quot;_order&quot; value={$params.object_id}}</post_template>
+    <parser>
+      <section>
+        <regexp>@^\s \s*$@</regexp>
+        <xpath>//hits/row</xpath>
+      </section>
+      <lines>
+        <line>
+          <array/>
+          <regexp>@&lt;_id&gt;(?&lt;object_id&gt;\S+)&lt;/_id&gt;@</regexp>
+          <xpath>//row/_id</xpath>
+        </line>
+        <line>
+          <array/>
+          <regexp>@&lt;router&gt;(?&lt;router&gt;\S+)&lt;/router&gt;@</regexp>
+          <xpath>//row/_source/router</xpath>
+        </line>
+        <line>
+          <array/>
+          <regexp>@&lt;SLA&gt;(?&lt;sla&gt;\S+)&lt;/SLA&gt;@</regexp>
+          <xpath>//row/_source/SLA</xpath>
+        </line>
+        <line>
+          <array/>
+          <regexp>@&lt;bandwidth&gt;(?&lt;bandwidth&gt;\S+)&lt;/bandwidth&gt;@</regexp>
+          <xpath>//row/_source/bandwidth</xpath>
+        </line>
+        <line>
+          <array/>
+          <regexp>@&lt;VLAN-ID&gt;(?&lt;vlan_id&gt;\S+)&lt;/VLAN-ID&gt;@</regexp>
+          <xpath>//row/_source/VLAN-ID</xpath>
+        </line>
+        <line>
+          <array/>
+          <regexp>@&lt;VPN-ID&gt;(?&lt;vpn_id&gt;\S+)&lt;/VPN-ID&gt;@</regexp>
+          <xpath>//row/_source/VPN-ID</xpath>
+        </line>
+      </lines>
+    </parser>
+    <xpath>/vpn_*/_search?size=1000</xpath>
+  </command>
+  <command name="UPDATE">
+    <operation>{literal}{{/literal}
+&quot;router&quot;: &quot;{$params.router}&quot;,
+&quot;VLAN-ID&quot;: &quot;{$params.vlan_id}&quot;,
+&quot;VPN-ID&quot;: &quot;{$params.vpn_id}&quot;,
+&quot;SLA&quot;: &quot;{$params.sla}&quot;,
+&quot;bandwidth&quot;: &quot;{$params.bandwidth}&quot;
+{literal}}{/literal}</operation>
+    <rest>POST</rest>
+    <xpath>/vpn_conf/_doc/{$params.object_id}</xpath>
+  </command>
+  <command name="CONSTRAINT"/>
+  <command name="CREATE">
+    <operation>{literal}{{/literal}
+&quot;router&quot;: &quot;{$params.router}&quot;,
+&quot;VLAN-ID&quot;: &quot;{$params.vlan_id}&quot;,
+&quot;VPN-ID&quot;: &quot;{$params.vpn_id}&quot;,
+&quot;SLA&quot;: &quot;{$params.sla}&quot;,
+&quot;bandwidth&quot;: &quot;{$params.bandwidth}&quot;
+{literal}}{/literal}</operation>
+    <rest>POST</rest>
+    <xpath>/vpn_conf/_doc/{$params.object_id}</xpath>
+  </command>
+  <command name="DELETE">
+    <operation>{literal}{{/literal}
+{literal}}{/literal}</operation>
+    <rest>DELETE</rest>
+    <xpath>/vpn_conf/_doc/{$params.object_id}</xpath>
+  </command>
+  <command name="READ"/>
+  <command name="LIST"/>
+</ObjectDefinition>
