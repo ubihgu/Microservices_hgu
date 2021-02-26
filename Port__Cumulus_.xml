@@ -1,0 +1,141 @@
+<ObjectDefinition>
+  <information>
+    <icon>none</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <serviceTaskType/>
+    <order>0</order>
+    <visibility>5</visibility>
+    <configType>cli</configType>
+    <createTemplateId/>
+    <createTemplateObject/>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects/>
+    <name>Port (Cumulus)</name>
+    <group>Default</group>
+    <importonce>false</importonce>
+    <importrank>0</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>false</sortascending>
+    <sortauto>false</sortauto>
+    <sortnumerical>false</sortnumerical>
+    <sortvariable>param._order</sortvariable>
+  </information>
+  <variables frozen="0">
+    <variable displayName="Port" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="State" name="params.state" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="1" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <values>
+        <values displayValue="UP">UP</values>
+        <values displayValue="DN">DN</values>
+        <values displayValue="ADMDN">ADMDN</values>
+      </values>
+    </variable>
+    <variable displayName="Speed" name="params.speed" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="2" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="MTU" name="params.mtu" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="3" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Mode" name="params.mode" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="4" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example>
+    <content>net show interface all
+State  Name      Spd  MTU    Mode           LLDP                          Summary
+-----  --------  ---  -----  -------------  ----------------------------  ------------------
+UP     lo        N/A  65536  Loopback                                     IP: 127.0.0.1/8
+lo                                                                 IP: 10.10.10.3/32
+lo                                                                 IP: ::1/128
+UP     eth0      1G   1500   Mgmt           tip-sw1-n3k-4 (Ethernet1/41)  IP: 10.25.27.11/24
+DN     swp1      10G  1500   NotConfigured
+DN     swp2      10G  1500   NotConfigured
+DN     swp3      10G  1500   NotConfigured
+DN     swp4      10G  1500   NotConfigured
+DN     swp5      10G  1500   NotConfigured
+DN     swp6      10G  1500   NotConfigured
+DN     swp7      10G  1500   NotConfigured
+DN     swp8      10G  1500   NotConfigured
+DN     swp9      10G  1500   NotConfigured
+UP     swp10     10G  1500   Trunk/L2                                     Master: bridge(UP)DN     swp11     10G  1500   NotConfigured
+DN     swp12     10G  1500   NotConfigured
+DN     swp13     10G  1500   NotConfigured
+DN     swp14     10G  1500   NotConfigured
+DN     swp15     10G  1500   NotConfigured
+DN     swp16     10G  1500   NotConfigured
+DN     swp17     10G  1500   NotConfigured
+DN     swp18     10G  1500   NotConfigured
+DN     swp19     10G  1500   NotConfigured
+DN     swp20     10G  1500   NotConfigured
+DN     swp21     10G  1500   NotConfigured
+DN     swp22     10G  1500   NotConfigured
+DN     swp23     10G  1500   NotConfigured
+DN     swp24     10G  1500   NotConfigured
+DN     swp25     10G  1500   NotConfigured
+DN     swp26     10G  1500   NotConfigured
+DN     swp27     10G  1500   NotConfigured
+DN     swp28     10G  1500   NotConfigured
+DN     swp29     10G  1500   NotConfigured
+DN     swp30     10G  1500   NotConfigured
+DN     swp31     10G  1500   NotConfigured
+DN     swp32     10G  1500   NotConfigured
+DN     swp33     10G  1500   NotConfigured
+DN     swp34     10G1500   NotConfigured
+DN     swp35     10G  1500   NotConfigured
+DN     swp36     10G  1500   NotConfigured
+DN     swp37     10G  1500   NotConfigured
+DN     swp38     10G  1500   NotConfigured
+DN     swp39     10G  1500   NotConfigured
+ADMDN  swp40     N/A  1500   NotConfigured
+DN     swp41     10G  1500   NotConfigured
+DN     swp42     10G  1500   NotConfigured
+DN     swp43     10G  1500   NotConfigured
+DN     swp44     10G  1500   NotConfigured
+DN     swp45     10G  1500   NotConfigured
+DN     swp4610G  1500   NotConfigured
+DN     swp47     10G  1500   NotConfigured
+DN     swp48     10G  1500   NotConfigured
+UP     swp49     40G  1500   Interface/L3   sonic (fortyGigE1/1)          IP: 10.1.0.2/24
+DN     swp50     40G  1500   Interface/L3                                 IP: 10.3.0.2/24
+DN     swp51     40G  1500   NotConfigured
+DN     swp52     40G  1500   NotConfigured
+ADMDN  swp53     N/A  1500   NotConfigured
+DN     swp54     40G  1500   NotConfigured
+UP     bridge    N/A  1500   Bridge/L2
+UP     vlan10    N/A  1500NotConfigured
+UP     vni10010  N/A  1500   Trunk/L2                                     Master: bridge(UP)</content>
+  </example>
+  <command name="IMPORT">
+    <operation>net show interface all</operation>
+    <parser>
+      <section>
+        <regexp>@(?&lt;state&gt;\S+)\s+(?&lt;object_id&gt;\S+)\s+(?&lt;speed&gt;\S+)\s+(?&lt;mtu&gt;\S+)\s+(?&lt;mode&gt;\S+)@</regexp>
+        <xpath/>
+      </section>
+      <lines>
+        <ignore>
+          <regexp>@State@</regexp>
+        </ignore>
+        <ignore>
+          <regexp>@----@</regexp>
+        </ignore>
+      </lines>
+    </parser>
+  </command>
+  <command name="UPDATE">
+    <operation>{if $params.state==&apos;ADMDN&apos;}
+net add interface {$params.object_id} link down
+net commit
+{/if}
+{if $params.state==&apos;DN&apos;}
+net del interface {$params.object_id} link down
+net commit
+{/if}
+{if $params.state==&apos;UP&apos;}
+net del interface {$params.object_id} link down
+net commit
+{/if}</operation>
+  </command>
+  <command name="CONSTRAINT"/>
+  <command name="CREATE"/>
+  <command name="DELETE"/>
+  <command name="READ"/>
+  <command name="LIST"/>
+</ObjectDefinition>
