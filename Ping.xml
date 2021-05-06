@@ -1,0 +1,63 @@
+<ObjectDefinition>
+  <information>
+    <icon>none</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <serviceTaskType/>
+    <order>0</order>
+    <visibility>0</visibility>
+    <configType>cli</configType>
+    <createTemplateId/>
+    <createTemplateObject/>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects/>
+    <name>Ping</name>
+    <group>Default</group>
+    <importonce>false</importonce>
+    <importrank>0</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>false</sortascending>
+    <sortauto>false</sortauto>
+    <sortnumerical>false</sortnumerical>
+    <sortvariable>param._order</sortvariable>
+  </information>
+  <variables frozen="0">
+    <variable displayName="object_id" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example>
+    <content>[root@linux_me /]# ping -c 10 -I 172.20.0.101 172.20.0.8
+PING 172.20.0.8 (172.20.0.8) from 172.20.0.101 : 56(84) bytes of data.
+64 bytes from 172.20.0.8: icmp_seq=1 ttl=64 time=0.176 ms
+64 bytes from 172.20.0.8: icmp_seq=2 ttl=64 time=0.185 ms
+64 bytes from 172.20.0.8: icmp_seq=3 ttl=64 time=0.138 ms
+64 bytes from 172.20.0.8: icmp_seq=4 ttl=64 time=0.190 ms
+64 bytes from 172.20.0.8: icmp_seq=5 ttl=64 time=0.154 ms
+64 bytes from 172.20.0.8: icmp_seq=6 ttl=64 time=0.072 ms
+64 bytes from 172.20.0.8: icmp_seq=7ttl=64 time=0.136 ms
+64 bytes from 172.20.0.8: icmp_seq=8 ttl=64 time=0.149 ms
+64 bytes from 172.20.0.8: icmp_seq=9 ttl=64 time=0.151 ms
+64 bytes from 172.20.0.8: icmp_seq=10 ttl=64 time=0.136 ms
+--- 172.20.0.8 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 9205ms
+rtt min/avg/max/mdev = 0.072/0.148/0.190/0.034 ms</content>
+  </example>
+  <command name="IMPORT">
+    <operation>ping -c 10 -I {$params.src_ip} {$params.dst_ip}</operation>
+    <parser>
+      <section>
+        <regexp>@.+, (?&lt;object_id&gt;\d+)% packet loss,\s+.*@</regexp>
+        <xpath/>
+      </section>
+      <lines/>
+    </parser>
+  </command>
+  <command name="UPDATE"/>
+  <command name="CONSTRAINT"/>
+  <command name="CREATE"/>
+  <command name="DELETE"/>
+  <command name="READ"/>
+  <command name="LIST"/>
+</ObjectDefinition>

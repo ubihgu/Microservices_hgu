@@ -1,0 +1,120 @@
+<ObjectDefinition>
+  <information>
+    <icon>none</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <serviceTaskType/>
+    <order>0</order>
+    <visibility>5</visibility>
+    <configType>cli</configType>
+    <createTemplateId/>
+    <createTemplateObject/>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects/>
+    <name>nmap</name>
+    <group>Default</group>
+    <importonce>false</importonce>
+    <importrank>0</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>false</sortascending>
+    <sortauto>false</sortauto>
+    <sortnumerical>false</sortnumerical>
+    <sortvariable>param._order</sortvariable>
+  </information>
+  <variables frozen="0">
+    <variable displayName="Protocol" name="params.protocol" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="1" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Port" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="State" name="params.state" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="2" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Reason" name="params.reason" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="3" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Reason TTL" name="params.reason_ttl" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="4" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Product" name="params.product" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="5" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example>
+    <content>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;?xml-stylesheet href=&quot;file:///usr/bin/../share/nmap/nmap.xsl&quot; type=&quot;text/xsl&quot;?&gt;
+&lt;!-- Nmap 6.40 scan initiated Mon Mar  8 21:22:38 2021 as: nmap -F -sV -oX nmap.latest -&amp;#45;max-retries 2 192.168.51.254 --&gt;
+&lt;nmaprun scanner=&quot;nmap&quot; args=&quot;nmap -F -sV -oX nmap.latest -&amp;#45;max-retries 2 192.168.51.254&quot; start=&quot;1615238558&quot; startstr=&quot;Mon Mar  8 21:22:38 2021&quot; version=&quot;6.40&quot; xmloutputversion=&quot;1.04&quot;&gt;
+&lt;scaninfo type=&quot;syn&quot; protocol=&quot;tcp&quot; numservices=&quot;100&quot; services=&quot;7,9,13,21-23,25-26,37,53,79-81,88,106,110-111,113,119,135,139,143-144,179,199,389,427,443-445,465,513-515,543-544,548,554,587,631,646,873,990,993,995,1025-1029,1110,1433,1720,1723,1755,1900,2000-2001,2049,2121,2717,3000,3128,3306,3389,3986,4899,5000,5009,5051,5060,5101,5190,5357,5432,5631,5666,5800,5900,6000-6001,6646,7070,8000,8008-8009,8080-8081,8443,8888,9100,9999-10000,32768,49152-49157&quot;/&gt;
+&lt;verbose level=&quot;0&quot;/&gt;
+&lt;debugging level=&quot;0&quot;/&gt;
+&lt;host starttime=&quot;1615238558&quot; endtime=&quot;1615238602&quot;&gt;&lt;status state=&quot;up&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;address addr=&quot;192.168.51.254&quot; addrtype=&quot;ipv4&quot;/&gt;
+&lt;hostnames&gt;
+&lt;/hostnames&gt;
+&lt;ports&gt;&lt;extraports state=&quot;filtered&quot; count=&quot;68&quot;&gt;
+&lt;extrareasons reason=&quot;no-responses&quot; count=&quot;68&quot;/&gt;
+&lt;/extraports&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;21&quot;&gt;&lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;ftp&quot; product=&quot;Freebox ftpd&quot; devicetype=&quot;media device&quot; method=&quot;probed&quot; conf=&quot;10&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;22&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;ssh&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;23&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;telnet&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;25&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;smtp&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;53&quot;&gt;&lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;domain&quot; product=&quot;dnsmasq&quot; version=&quot;2.81&quot; method=&quot;probed&quot; conf=&quot;10&quot;&gt;&lt;cpe&gt;cpe:/a:thekelleys:dnsmasq:2.81&lt;/cpe&gt;&lt;/service&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;80&quot;&gt;&lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;http&quot; product=&quot;nginx&quot; method=&quot;probed&quot; conf=&quot;10&quot;&gt;&lt;cpe&gt;cpe:/a:igor_sysoev:nginx&lt;/cpe&gt;&lt;/service&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;110&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;pop3&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;111&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;rpcbind&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;113&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;ident&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;135&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;msrpc&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;139&quot;&gt;&lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;netbios-ssn&quot; product=&quot;Samba smbd&quot; version=&quot;3.X&quot; extrainfo=&quot;workgroup: WORKGROUP&quot; method=&quot;probed&quot; conf=&quot;10&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;143&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;imap&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;199&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;smux&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;443&quot;&gt;&lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;http&quot; product=&quot;nginx&quot; method=&quot;probed&quot; conf=&quot;10&quot;&gt;&lt;cpe&gt;cpe:/a:igor_sysoev:nginx&lt;/cpe&gt;&lt;/service&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;445&quot;&gt;&lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;netbios-ssn&quot; product=&quot;Samba smbd&quot; version=&quot;3.X&quot; extrainfo=&quot;workgroup: WORKGROUP&quot; method=&quot;probed&quot; conf=&quot;10&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;548&quot;&gt;&lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;afp&quot; servicefp=&quot;SF-Port548-TCP:V=6.40%I=7%D=3/8%Time=604695BB%P=x86_64-redhat-linux-gnu%r(afp,1A4,&amp;quot;\x01\x03\0\x01\0\0\0\0\0\0\x01\x94\0\0\0\0\0\&amp;quot;\x001\0\\\0l\x8fy\x0eFreebox\x20Server\0\x01l\x01\|\x01\x83\x01\x84\x0eNetatalk3\.1\.12\x06\x06AFP2\.2\x06AFPX03\x06AFP3\.1\x06AFP3\.2\x06AFP3\.3\x06AFP3\.4\x02\tDHCAST128\x04DHX2\0\0\0\0\0\x80\x02\0\x01\x80\x03\0\x02\x80\x02\x80\x02\x80\x02\x80\x04\x80\x02@\x04\x87\xc2@\x04X4@\x04\x20\x08@\x02\x16\xd0\x80\x01\x01\x01\0\x02\x80\x02\x80\x02\x9cr\x80\x04\&amp;quot;\x88@\x04A\x04@\x04A\x04@\x04A\x04@\x04I\$@\x0eUT\xe0\x10\]t\x10\x10&amp;gt;\xf8\x10\x7f\xfc\x7f\xfe\x20\x04@\x04\x1f\xfc\x7f\xf8\0\x07\xc0\0\0\x04@\0\0\x03\x80\0\0\x04@\0\xaf\xf9\?\xf5\0\x02\x80\0\xaf\xfc\x7f\xf5\0\0\0\0\0\0\0\0\0\x80\x02\0\x01\x80\x03\0\x03\x80\x03\x80\x03\x80\x03\x80\x07\x80\x03\xc0\x07\x87\xc3\xc0\x07\xdf\xf7\xc0\x07\xff\xff\xc0\x03\xff\xff\x80\x01\xff\xff\0\x03\xff\xff\x80\x03\xff\xff\x80\x07\xff\xff\xc0\x07\xff\xff\xc0\x07\xff\xff\xc0\x07\xff\xff\xc0\x07\xff\xff\xc0\x0f\xff\xff\xe0\x1f\xff\xff\xf0\x1f\xff\xff\xf0\x7f\xff\xff\xfe\?\xff\xff\xfc\x1f\xff\xff\xf8\0\x07\xc0\0\0\x07\xc0\0\0\x03\x80\0\0\x04@\0\xaf\xf9\?\xf5\0\x02\x80\0\xaf\xfc\x7f\xf5\0\0\0\x004&amp;apos;\x92f\x8f\xfcIcanHazAFP\x01\x06\x01\xc0\xa83\xfe\0\0\x0eFreebox\x20Server&amp;quot;);&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;554&quot;&gt;&lt;state state=&quot;open&quot; reason=&quot;syn-ack&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;rtsp&quot; product=&quot;Freebox rtspd&quot; version=&quot;1.2&quot; devicetype=&quot;media device&quot; method=&quot;probed&quot; conf=&quot;10&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;587&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;submission&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;993&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;imaps&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;995&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;pop3s&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;1025&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;NFS-or-IIS&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;1720&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;H.323/Q.931&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;1723&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;pptp&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;2000&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;cisco-sccp&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;3306&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;mysql&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;3389&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;ms-wbt-server&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;5000&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;upnp&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;5051&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;ida-agent&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;5900&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;vnc&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;6000&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;X11&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;8888&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;sun-answerbook&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;port protocol=&quot;tcp&quot; portid=&quot;49157&quot;&gt;&lt;state state=&quot;closed&quot; reason=&quot;reset&quot; reason_ttl=&quot;37&quot;/&gt;&lt;service name=&quot;unknown&quot; method=&quot;table&quot; conf=&quot;3&quot;/&gt;&lt;/port&gt;
+&lt;/ports&gt;
+&lt;times srtt=&quot;2653582&quot; rttvar=&quot;2256580&quot; to=&quot;10000000&quot;/&gt;
+&lt;/host&gt;
+&lt;runstats&gt;&lt;finished time=&quot;1615238602&quot; timestr=&quot;Mon Mar  8 21:23:22 2021&quot; elapsed=&quot;43.70&quot; summary=&quot;Nmap done at Mon Mar  8 21:23:22 2021; 1 IP address (1 host up) scanned in 43.70 seconds&quot; exit=&quot;success&quot;/&gt;&lt;hosts up=&quot;1&quot; down=&quot;0&quot; total=&quot;1&quot;/&gt;
+&lt;/runstats&gt;
+&lt;/nmaprun&gt;</content>
+  </example>
+  <command name="IMPORT">
+    <operation>cat nmap.latest</operation>
+    <parser>
+      <section>
+        <regexp>@&lt;port protocol=&quot;(?&lt;protocol&gt;\S+)&quot; portid=&quot;(?&lt;object_id&gt;\S+)&quot;&gt;&lt;state state=&quot;(?&lt;state&gt;\S+)&quot; reason=&quot;(?&lt;reason&gt;\S+)&quot; reason_ttl=&quot;(?&lt;reason_ttl&gt;\S+)&quot;/&gt;&lt;service name=&quot;(?&lt;name&gt;\S+)&quot;@</regexp>
+        <xpath/>
+      </section>
+      <section>
+        <regexp>@&lt;port protocol=&quot;(?&lt;protocol&gt;\S+)&quot; portid=&quot;(?&lt;object_id&gt;\S+)&quot;&gt;&lt;state state=&quot;(?&lt;state&gt;\S+)&quot; reason=&quot;(?&lt;reason&gt;\S+)&quot; reason_ttl=&quot;(?&lt;reason_ttl&gt;\S+)&quot;/&gt;&lt;service name=&quot;(?&lt;name&gt;\S+)&quot; product=&quot;(?&lt;product&gt;.*?)&quot;@</regexp>
+        <xpath/>
+      </section>
+      <lines>
+        <line>
+          <array/>
+          <regexp>@^\s \s*$@</regexp>
+          <xpath/>
+        </line>
+      </lines>
+    </parser>
+  </command>
+  <command name="UPDATE">
+    <operation>nmap  -F -sV  -oX nmap.latest --max-retries 2 {$params.object_id}</operation>
+  </command>
+  <command name="CONSTRAINT"/>
+  <command name="CREATE">
+    <operation>nmap  -F -sV  -oX nmap.latest --max-retries 2 {$params.object_id}</operation>
+  </command>
+  <command name="DELETE">
+    <operation>rm nmap.latest</operation>
+  </command>
+  <command name="READ"/>
+  <command name="LIST"/>
+</ObjectDefinition>
