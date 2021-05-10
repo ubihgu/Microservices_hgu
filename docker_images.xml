@@ -46,6 +46,8 @@
   <command name="READ"/>
   <command name="UPDATE"/>
   <command name="CONSTRAINT"/>
-  <command name="DELETE"/>
+  <command name="DELETE">
+    <operation>docker image rm {$params.object_id}</operation>
+  </command>
   <command name="LIST"/>
 </ObjectDefinition>
