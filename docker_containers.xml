@@ -37,7 +37,7 @@
     <operation>docker ps -a | grep -v CONTAINER</operation>
     <parser>
       <section>
-        <regexp>@(?&lt;object_id&gt;\S+)\s+(?&lt;image&gt;\S+)\s+(?&lt;names&gt;\S+)\s+(?&lt;command&gt;\S+)\s+(?&lt;created&gt;\S+\s+\S+)\s+(?&lt;status&gt;\S+\s+\S+\s+\S+)\s+.*@</regexp>
+        <regexp>@(?&lt;object_id&gt;\S+)\s+(?&lt;image&gt;\S+)\s+(?&lt;command&gt;\S+)\s+(?&lt;created&gt;\S+\s+\S+)\s+(?&lt;status&gt;\S+\s+\S+\s+\S+)\s+.*\s+(?&lt;names&gt;\S+)@</regexp>
         <xpath/>
       </section>
       <lines/>
