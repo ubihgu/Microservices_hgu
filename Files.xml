@@ -43,15 +43,15 @@
     </parser>
   </command>
   <command name="CREATE">
-    <operation>#</operation>
+    <operation>touch {$params.object_id}</operation>
   </command>
   <command name="READ"/>
   <command name="UPDATE">
-    <operation>#</operation>
+    <operation>mv {$params.object_id} {$params.object_id}</operation>
   </command>
   <command name="CONSTRAINT"/>
   <command name="DELETE">
-    <operation>#</operation>
+    <operation>rm {$params.object_id}</operation>
   </command>
   <command name="LIST"/>
 </ObjectDefinition>
