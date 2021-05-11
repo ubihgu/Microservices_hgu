@@ -37,7 +37,7 @@
       </section>
       <lines>
         <ignore>
-          <regexp>@^\[msa@localhost@</regexp>
+          <regexp>@\[msa@localhost@</regexp>
         </ignore>
       </lines>
     </parser>
