@@ -32,7 +32,7 @@
     <operation>ls -1 /tmp</operation>
     <parser>
       <section>
-        <regexp>@^\s \s*$@</regexp>
+        <regexp>@(?&lt;object_id&gt;\S+)@</regexp>
         <xpath/>
       </section>
       <lines/>
