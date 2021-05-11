@@ -47,11 +47,11 @@
   </command>
   <command name="READ"/>
   <command name="UPDATE">
-    <operation>mv {$params.object_id} {$params.object_id}</operation>
+    <operation>mv {$files.$object_id.object_id} {$params.object_id}</operation>
   </command>
   <command name="CONSTRAINT"/>
   <command name="DELETE">
-    <operation>rm {$params.object_id}</operation>
+    <operation>rm {$files.$object_id.object_id}</operation>
   </command>
   <command name="LIST"/>
 </ObjectDefinition>
