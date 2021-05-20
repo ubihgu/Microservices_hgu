@@ -29,10 +29,10 @@
   </variables>
   <example/>
   <command name="IMPORT">
-    <operation>ls -1 Desktop/doc</operation>
+    <operation>ls -l Desktop/doc | grep -v total</operation>
     <parser>
       <section>
-        <regexp>@(?&lt;object_id&gt;\S+)@</regexp>
+        <regexp>@\S+\s+\S+\s+\S+\s+\S+\s+(?&lt;object_id&gt;\S+)@</regexp>
         <xpath/>
       </section>
       <lines>
