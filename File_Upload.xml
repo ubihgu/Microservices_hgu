@@ -45,7 +45,9 @@
   </command>
   <command name="CREATE"/>
   <command name="READ"/>
-  <command name="UPDATE"/>
+  <command name="UPDATE">
+    <operation>docker cp Desktop/doc/{$params.object_id} msa_dev:/opt/fmc_repository/Datafiles/</operation>
+  </command>
   <command name="CONSTRAINT"/>
   <command name="DELETE"/>
   <command name="LIST"/>
