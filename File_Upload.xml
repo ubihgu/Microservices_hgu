@@ -29,7 +29,7 @@
   </variables>
   <example/>
   <command name="IMPORT">
-    <operation>ls -1</operation>
+    <operation>ls -l</operation>
     <parser>
       <section>
         <regexp>@(?&lt;object_id&gt;\S+)@</regexp>
