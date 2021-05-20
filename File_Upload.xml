@@ -35,7 +35,11 @@
         <regexp>@(?&lt;object_id&gt;\S+)@</regexp>
         <xpath/>
       </section>
-      <lines/>
+      <lines>
+        <ignore>
+          <regexp>@Herves-MacBook-Pro@</regexp>
+        </ignore>
+      </lines>
     </parser>
   </command>
   <command name="CREATE"/>
