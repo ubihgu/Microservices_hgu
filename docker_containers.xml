@@ -58,7 +58,8 @@
   </command>
   <command name="CONSTRAINT"/>
   <command name="DELETE">
-    <operation>docker rm {$params.names}</operation>
+    <operation>docker stop {$params.names}
+docker rm {$params.names}</operation>
   </command>
   <command name="LIST"/>
 </ObjectDefinition>
