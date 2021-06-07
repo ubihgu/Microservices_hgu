@@ -49,7 +49,9 @@
       <lines/>
     </parser>
   </command>
-  <command name="CREATE"/>
+  <command name="CREATE">
+    <operation>docker run --name {$params.names} -p {$params.networkport}:{$params.containerport} -d nginx</operation>
+  </command>
   <command name="READ"/>
   <command name="UPDATE">
     <operation>docker {$params.status} {$params.names}</operation>
