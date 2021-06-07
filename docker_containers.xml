@@ -50,13 +50,15 @@
     </parser>
   </command>
   <command name="CREATE">
-    <operation>docker run --name {$params.names} -p {$params.networkport}:{$params.containerport} -d nginx</operation>
+    <operation>docker run --name {$params.names} -p {$params.networkport}:{$params.containerport} -d {$params.image}</operation>
   </command>
   <command name="READ"/>
   <command name="UPDATE">
     <operation>docker {$params.status} {$params.names}</operation>
   </command>
   <command name="CONSTRAINT"/>
-  <command name="DELETE"/>
+  <command name="DELETE">
+    <operation>docker rm {$params.names}</operation>
+  </command>
   <command name="LIST"/>
 </ObjectDefinition>
