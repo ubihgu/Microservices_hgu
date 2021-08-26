@@ -35,7 +35,7 @@ on linux_amd64</content>
     <operation><![CDATA[terraform version]]></operation>
     <parser>
       <section>
-        <regexp>@^\s \s*$@</regexp>
+        <regexp>@Terraform (?&lt;object_id&gt;\S+)@</regexp>
         <xpath/>
       </section>
       <lines/>
