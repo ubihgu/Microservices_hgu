@@ -1,0 +1,70 @@
+<ObjectDefinition>
+  <information>
+    <icon>none</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <serviceTaskType/>
+    <order>0</order>
+    <visibility>5</visibility>
+    <configType>cli</configType>
+    <createTemplateId/>
+    <createTemplateObject/>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects/>
+    <name>docker_stats</name>
+    <group>Default</group>
+    <importonce>false</importonce>
+    <importrank>0</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>false</sortascending>
+    <sortauto>false</sortauto>
+    <sortnumerical>false</sortnumerical>
+    <sortvariable>param._order</sortvariable>
+  </information>
+  <variables frozen="0">
+    <variable displayName="Container Name" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Container ID" name="params.image_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="|" groupDisplayName="" displayOrder="1" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="CPU%" name="params.cpu" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="|" groupDisplayName="" displayOrder="2" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="MEM USAGE" name="params.memory" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="|" groupDisplayName="" displayOrder="3" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="LIMIT" name="params.memory_limit" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="|" groupDisplayName="" displayOrder="4" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="MEM%" name="params.memory_percent" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="5" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example>
+    <content>docker stats --no-stream
+CONTAINER ID   NAME                     CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS
+ae78b6ecf7ff   msa_front                0.00%     2.832MiB / 3.844GiB   0.07%     16.9MB / 18.8MB   15.7MB / 8.19kB   3
+0cc2dfef5831   msa_ui                   0.00%     2.676MiB / 3.844GiB   0.07%     108kB / 13MB      24.7MB / 36.9kB   4
+e36ab88d4e3a   msa_kibana               0.23%     292.8MiB / 3.844GiB   7.44%     46.3MB / 70.4MB   365MB / 10.2MB    23
+f80a6620888e   msa_sms                  3.96%     56.62MiB / 3.844GiB   1.44%     500MB / 519MB     336MB / 1.15MB    414
+45c56770628f   msa_cerebro              2.85%     216.4MiB / 3.844GiB   5.50%     4.5kB / 0B        140MB / 172kB     25
+1c86e3397a03   msa_alarm                0.08%     21.94MiB / 3.844GiB   0.56%     189MB / 207MB     171MB / 21.2MB    34
+cdfdaedd236d   msa_api                  1.41%     732.1MiB / 3.844GiB   18.60%    140MB / 248MB     459MB / 57.8MB    238
+38181b7e1466   msa_bud1.06%13.7MiB / 3.844GiB    0.35%     76.2MB / 65MB     140MB / 147kB     27
+29a53bcb85f2   linux_me                 0.47%     3.289MiB / 3.844GiB   0.08%     670kB / 752kB     3.02MB / 8.19kB   7
+eba92f48ce8e   msa_es                   2.80%     956.5MiB / 3.844GiB   24.30%    88.7MB / 56MB     452MB / 119MB     68
+c0cc7feae3f2   quickstart_msa_ai_ml_1   1.08%     41.64MiB / 3.844GiB   1.06%     4.51kB / 0B       51.2MB / 0B       5
+b2b7bf2d0426   msa_db                   2.25%     174.1MiB/ 3.844GiB   4.42%1.01GB / 883MB    95.3MB / 655MB    88
+f6e408976858   linux_me_2               0.34%     3.711MiB / 3.844GiB   0.09%     4.51kB / 0B       22.9MB / 8.19kB   7
+6f9c4aefde13   camunda                  0.44%     656.7MiB / 3.844GiB   16.68%    6MB / 8.92MB      249MB / 12.3kB    45
+6e34d1ee9b3d   6e34d1ee9b3d_msa_dev     0.00%     964KiB / 3.844GiB     0.02%     4.58kB / 0B       14.6MB / 135kB    1</content>
+  </example>
+  <command name="IMPORT">
+    <operation>docker stats --no-stream | grep -v CONTAINER</operation>
+    <parser>
+      <section>
+        <regexp>@(?&lt;image_id&gt;\S+)\s+(?&lt;object_id&gt;\S+)\s+(?&lt;cpu&gt;\S+)\s+(?&lt;memory&gt;\S+)\s+/\s+(?&lt;memory_limit&gt;\S+)\s+(?&lt;memory_percent&gt;\S+).*@</regexp>
+        <xpath/>
+      </section>
+      <lines/>
+    </parser>
+  </command>
+  <command name="CREATE"/>
+  <command name="READ"/>
+  <command name="UPDATE"/>
+  <command name="CONSTRAINT"/>
+  <command name="DELETE"/>
+  <command name="LIST"/>
+</ObjectDefinition>

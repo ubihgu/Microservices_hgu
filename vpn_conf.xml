@@ -1,0 +1,124 @@
+<ObjectDefinition>
+  <information>
+    <icon>none</icon>
+    <description></description>
+    <displayField>object_id</displayField>
+    <serviceTaskType/>
+    <order>0</order>
+    <visibility>5</visibility>
+    <configType>cli</configType>
+    <createTemplateId/>
+    <createTemplateObject/>
+    <defaultDisplay>false</defaultDisplay>
+    <dynamic>false</dynamic>
+    <importIfMandatoryPresent>false</importIfMandatoryPresent>
+    <maxInstances>0</maxInstances>
+    <relatedObjects/>
+    <name>vpn.conf</name>
+    <group>VPN|CLI</group>
+    <importonce>false</importonce>
+    <importrank>0</importrank>
+    <reorderinstances>false</reorderinstances>
+    <sortascending>false</sortascending>
+    <sortauto>false</sortauto>
+    <sortnumerical>false</sortnumerical>
+    <sortvariable>param._order</sortvariable>
+  </information>
+  <variables frozen="0">
+    <variable displayName="VPN File" name="params.object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Router" name="params.router" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="1" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="VLAN ID" name="params.vlan_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="2" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="VPN ID" name="params.vpn_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="3" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="SLA" name="params.sla" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="5" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Bandwidth" name="params.bandwidth" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="4" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="NE-OPS" name="params.ne_ops" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="6" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example/>
+  <command name="IMPORT">
+    <operation>for i  in `ls /tmp/demo/vpn` ; do echo VPNCONF:$i; cat /tmp/demo/vpn/$i; done</operation>
+    <parser>
+      <section>
+        <regexp>@VPNCONF:(?&lt;object_id&gt;\S+)@</regexp>
+        <xpath/>
+      </section>
+      <lines>
+        <line>
+          <array/>
+          <regexp>@router : (?&lt;router&gt;\S+)@</regexp>
+          <xpath/>
+        </line>
+        <line>
+          <array/>
+          <regexp>@VLAN-ID : (?&lt;vlan_id&gt;\S+)@</regexp>
+          <xpath/>
+        </line>
+        <line>
+          <array/>
+          <regexp>@VPN-ID : (?&lt;vpn_id&gt;\S+)@</regexp>
+          <xpath/>
+        </line>
+        <line>
+          <array/>
+          <regexp>@SLA : (?&lt;sla&gt;\S+)@</regexp>
+          <xpath/>
+        </line>
+        <line>
+          <array/>
+          <regexp>@bandwidth : (?&lt;bandwidth&gt;\S+)@</regexp>
+          <xpath/>
+        </line>
+        <line>
+          <array/>
+          <regexp>@via (?&lt;ne_ops&gt;\S+)@</regexp>
+          <xpath/>
+        </line>
+      </lines>
+    </parser>
+  </command>
+  <command name="UPDATE">
+    <operation>mkdir /tmp/demo/
+mkdir /tmp/demo/vpn
+{if $SD-&gt;SD_HOSTNAME == &quot;NEOPS&quot; }
+echo &quot;router : {$params.router}&quot; &gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;VLAN-ID : {$params.vlan_id}&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;VPN-ID : {$params.vpn_id}&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;SLA : {$params.sla}&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;bandwidth : {$params.bandwidth}&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;via NE-OPS&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+{else}
+echo &quot;router : {$params.router}&quot; &gt; /tmp/demo/vpn/{$params.object_id}
+echo &quot;VLAN-ID : {$params.vlan_id}&quot; &gt;&gt; /tmp/demo/vpn/{$params.object_id}
+echo &quot;VPN-ID : {$params.vpn_id}&quot; &gt;&gt; /tmp/demo/vpn/{$params.object_id}
+echo &quot;SLA : {$params.sla}&quot; &gt;&gt; /tmp/demo/vpn/{$params.object_id}
+echo &quot;bandwidth : {$params.bandwidth}&quot; &gt;&gt; /tmp/demo/vpn/{$params.object_id}
+{/if}</operation>
+  </command>
+  <command name="CONSTRAINT"/>
+  <command name="CREATE">
+    <operation>mkdir /tmp/demo/
+mkdir /tmp/demo/vpn
+{if $SD-&gt;SD_HOSTNAME == &quot;NEOPS&quot; }
+echo &quot;router : {$params.router}&quot; &gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;VLAN-ID : {$params.vlan_id}&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;VPN-ID : {$params.vpn_id}&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;SLA : {$params.sla}&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;bandwidth : {$params.bandwidth}&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+echo &quot;via NE-OPS&quot; &gt;&gt; /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+{else}
+echo &quot;router : {$params.router}&quot; &gt; /tmp/demo/vpn/{$params.object_id}
+echo &quot;VLAN-ID : {$params.vlan_id}&quot; &gt;&gt; /tmp/demo/vpn/{$params.object_id}
+echo &quot;VPN-ID : {$params.vpn_id}&quot; &gt;&gt; /tmp/demo/vpn/{$params.object_id}
+echo &quot;SLA : {$params.sla}&quot; &gt;&gt; /tmp/demo/vpn/{$params.object_id}
+echo &quot;bandwidth : {$params.bandwidth}&quot; &gt;&gt; /tmp/demo/vpn/{$params.object_id}
+{/if}</operation>
+  </command>
+  <command name="DELETE">
+    <operation>{if $SD-&gt;SD_HOSTNAME == &quot;NEOPS&quot; }
+rm -f /tmp/demo/vpn/{$SD-&gt;SDID}_{$params.object_id}
+{else}
+rm -f /tmp/demo/vpn/{$params.object_id}
+{/if}</operation>
+  </command>
+  <command name="READ"/>
+  <command name="LIST"/>
+</ObjectDefinition>
