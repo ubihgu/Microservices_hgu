@@ -65,7 +65,8 @@
   </command>
   <command name="CONSTRAINT"/>
   <command name="DELETE">
-    <operation><![CDATA[cat VLAN | sed "s/{$VLAN_Inventory.$object_id.object_id},{$VLAN_Inventory.$object_id.location},{$VLAN_Inventory.$object_id.location_id},{$VLAN_Inventory.$object_id.segment},{$VLAN_Inventory.$object_id.vlan_id},{$VLAN_Inventory.$object_id.use}//">VLAN]]></operation>
+    <operation><![CDATA[cat VLAN | sed "s/{$VLAN_Inventory.$object_id.object_id},{$VLAN_Inventory.$object_id.location},{$VLAN_Inventory.$object_id.location_id},{$VLAN_Inventory.$object_id.segment},{$VLAN_Inventory.$object_id.vlan_id},{$VLAN_Inventory.$object_id.use}//">test
+cp test VLAN]]></operation>
   </command>
   <command name="LIST"/>
 </ObjectDefinition>
