@@ -61,7 +61,8 @@
   </command>
   <command name="READ"/>
   <command name="UPDATE">
-    <operation><![CDATA[#]]></operation>
+    <operation><![CDATA[no ip route {$routing.$object_id.subnet} {$routing.$object_id.mask} {$routing.$object_id.gateway} {$routing.$object_id.metric}
+]]></operation>
   </command>
   <command name="CONSTRAINT"/>
   <command name="DELETE">
