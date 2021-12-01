@@ -43,7 +43,9 @@
       </values>
     </variable>
   </variables>
-  <example/>
+  <example>
+    <content>1,Gotanda,01,Segment A,1000,Used</content>
+  </example>
   <command name="IMPORT">
     <operation><![CDATA[cat  VLAN]]></operation>
     <parser>
