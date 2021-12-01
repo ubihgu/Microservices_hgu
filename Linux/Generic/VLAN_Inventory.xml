@@ -44,7 +44,7 @@
     </variable>
   </variables>
   <example>
-    <content>1,Gotanda,01,Segment A,1000,Used</content>
+    <content>1,Gotanda,01,Segment_A,1000,Used</content>
   </example>
   <command name="IMPORT">
     <operation><![CDATA[cat  VLAN]]></operation>
