@@ -48,7 +48,7 @@
     <operation><![CDATA[cat  VLAN]]></operation>
     <parser>
       <section>
-        <regexp>@{$params.object_id},{$params.location},{$params.location_id},{$params.segment},{$params.vlan_id},{$params.use}@</regexp>
+        <regexp>@(?&lt;object_id&gt;\S+),(?&lt;location&gt;\S+),(?&lt;location_id&gt;\S+),(?&lt;segment&gt;\S+),(?&lt;vlan_id&gt;\S+),(?&lt;use&gt;\S+)@</regexp>
         <xpath/>
       </section>
       <lines/>
