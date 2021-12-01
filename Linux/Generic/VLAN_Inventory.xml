@@ -45,16 +45,17 @@
   </variables>
   <example/>
   <command name="IMPORT">
+    <operation><![CDATA[cat  VLAN]]></operation>
     <parser>
       <section>
-        <regexp>@^\s \s*$@</regexp>
+        <regexp>@{$params.object_id},{$params.location},{$params.location_id},{$params.segment},{$params.vlan_id},{$params.use}@</regexp>
         <xpath/>
       </section>
       <lines/>
     </parser>
   </command>
   <command name="CREATE">
-    <operation><![CDATA[echo "$params.object_id,$params.location,$params.location_id,$params.segment,$params.vlan_id,$params.use" >> VLAN]]></operation>
+    <operation><![CDATA[echo "{$params.object_id},{$params.location},{$params.location_id},{$params.segment},{$params.vlan_id},{$params.use}" >> VLAN]]></operation>
   </command>
   <command name="READ"/>
   <command name="UPDATE">
