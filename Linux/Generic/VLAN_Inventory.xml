@@ -61,7 +61,8 @@
   </command>
   <command name="READ"/>
   <command name="UPDATE">
-    <operation><![CDATA[cat VLAN | sed "s/{$VLAN_Inventory.$object_id.object_id},{$VLAN_Inventory.$object_id.location},{$VLAN_Inventory.$object_id.location_id},{$VLAN_Inventory.$object_id.segment},{$VLAN_Inventory.$object_id.vlan_id},{$VLAN_Inventory.$object_id.use}/{$params.object_id},{$params.location},{$params.location_id},{$params.segment},{$params.vlan_id},{$params.use}/">test]]></operation>
+    <operation><![CDATA[cat VLAN | sed "s/{$VLAN_Inventory.$object_id.object_id},{$VLAN_Inventory.$object_id.location},{$VLAN_Inventory.$object_id.location_id},{$VLAN_Inventory.$object_id.segment},{$VLAN_Inventory.$object_id.vlan_id},{$VLAN_Inventory.$object_id.use}/{$params.object_id},{$params.location},{$params.location_id},{$params.segment},{$params.vlan_id},{$params.use}/">test
+mv test VLAN]]></operation>
   </command>
   <command name="CONSTRAINT"/>
   <command name="DELETE">
